@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Net.Http;
 
 namespace TheMonarchApp
 {
@@ -22,8 +18,7 @@ namespace TheMonarchApp
             var response = _httpClient.GetAsync(_url).Result;
             response.EnsureSuccessStatusCode();
             var json = response.Content.ReadAsStringAsync().Result;
-            var data = JsonConvert.DeserializeObject<List<MonarchDataModel>>(json);
-            return data;
+            return JsonConvert.DeserializeObject<List<MonarchDataModel>>(json);
         }
 
         public MonarchViewModel GetDataToDisplay(List<MonarchDataModel> monarchSet)

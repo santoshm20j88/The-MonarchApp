@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TheMonarchApp
+﻿namespace TheMonarchApp
 {
     public  class MonarchViewModel
     {
